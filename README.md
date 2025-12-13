@@ -17,7 +17,7 @@ leetcode-solutions/
 | # | Title | Solution | Topics | Difficulty |
 |---|-------|----------|--------|------------|
 | 739 | [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [Python](./medium/739-daily-temperatures.py) | Stack, Monotonic Stack | Medium |
-| 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | [Python](./hard/84-Largest Rectangle in Histogram.py) | Stack, Monotonic Stack | Hard |
+| 84 | [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | [Python](./hard/84-Largest-Rectangle-in-Histogram.py) | Stack, Monotonic Stack | Hard |
 
 
 ## Notes
