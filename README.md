@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-My collection of LeetCode problem solutions, organized by difficulty and topic.
+My collection of LeetCode problem solutions, organized by difficulty.
 
 ## Structure
 ```
