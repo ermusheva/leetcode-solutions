@@ -56,9 +56,15 @@ class Solution:
         n = len(tickets)
         for i in range(n):
             if i <= k:
-                time+=min(tickets[i], tickets[k])
+                if tickets[i] < tickets[k]:
+                    time+=tickets[i]
+                else :
+                    time+=tickets[k]
             else :
-                time+=min(tickets[i], tickets[k]-1)
+                if tickets[i] < tickets[k]-1:
+                    time+=tickets[i]
+                else :
+                    time+=tickets[k]-1
         return time
 
 def test_solution():
