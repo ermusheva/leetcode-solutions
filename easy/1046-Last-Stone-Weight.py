@@ -1,0 +1,75 @@
+"""
+1046. Last Stone Weight
+Difficulty: Easy
+Topics: Heap
+
+Problem:
+You are given an array of integers stones where stones[i] is the weight of the ith stone.
+
+We are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together. Suppose the heaviest two stones have weights x and y with x <= y. The result of this smash is:
+
+If x == y, both stones are destroyed, and
+If x != y, the stone of weight x is destroyed, and the stone of weight y has new weight y - x.
+At the end of the game, there is at most one stone left.
+
+Return the weight of the last remaining stone. If there are no stones left, return 0.
+
+ 
+
+Example 1:
+
+Input: stones = [2,7,4,1,8,1]
+Output: 1
+Explanation: 
+We combine 7 and 8 to get 1 so the array converts to [2,4,1,1,1] then,
+we combine 2 and 4 to get 2 so the array converts to [2,1,1,1] then,
+we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
+we combine 1 and 1 to get 0 so the array converts to [1] then that's the value of the last stone.
+Example 2:
+
+Input: stones = [1]
+Output: 1
+ 
+
+Constraints:
+
+- 1 <= stones.length <= 30
+- 1 <= stones[i] <= 1000
+
+Time Complexity: O(nlogn)
+"""
+
+from typing import List
+import heapq as hp
+
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        heap = []
+        for x in stones:
+            hp.heappush(heap, -x)
+        
+        while heap:
+            y = hp.heappop(heap)
+            if heap:
+                x = hp.heappop(heap)
+                hp.heappush(heap, y-x)
+        return(-y)
+
+def test_solution():
+    """Test cases for the solution"""
+    solution = Solution()
+    
+    # Test case 1
+    stones = [2,7,4,1,8,1]
+    
+    expected1 = 1
+    result1 = solution.lastStoneWeight(stones.copy())
+    assert result1 == expected1
+    print(f"Test 1 passed: {stones} -> {expected1}")
+
+    
+    print("\nAll tests passed! ")
+
+
+if __name__ == "__main__":
+    test_solution()
